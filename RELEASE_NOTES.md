@@ -1,8 +1,12 @@
-# Surfaces 0.1.0-alpha.1
+# Surfaces 0.1.0-alpha.2
 
 Connect a local web application, inspect its builds, turn design feedback into reusable guidance, and deploy a completed build locally with one action.
 
-This first macOS alpha includes:
+This update fixes first-run connection readiness. You can enter your application details while the build environment is preparing and leave **Connect application** open. Verification progresses to **Project ready to connect** automatically, keeping your entries and keyboard focus. No close-and-reopen workaround is needed.
+
+Real preparation failures remain visible, and **Connect and build application** still checks the current source and runtime before starting work.
+
+The macOS alpha includes:
 
 - A desktop workspace that prepares its own isolated Linux build environment.
 - Application and design-source connections, retained build captures, and a native application preview.
@@ -12,7 +16,7 @@ This first macOS alpha includes:
 
 ## Install and try it
 
-Download `Surfaces-0.1.0-alpha.1-macOS-arm64.zip` from the release, extract it, move Surfaces to Applications, and open it. The release includes `SHA256SUMS` for download verification.
+Download `Surfaces-0.1.0-alpha.2-macOS-arm64.zip` from the release, extract it, move Surfaces to Applications, and open it. The release includes `SHA256SUMS` for download verification.
 
 You need an Apple silicon Mac running macOS 13 or later, at least 16 GiB of memory, more than 20 GiB of free disk space, and an internet connection for initial environment preparation and application dependencies. You do not need to install Node, Python or Lima on the host.
 
@@ -25,7 +29,5 @@ To guide a change, use **Improve this view**, select design-system source, revie
 This release supports fresh installations. Recovery or migration of failed workspaces from previous engineering builds is not supported; preserve those workspaces rather than deleting them to retry. Existing engineering-build users should use a fresh macOS user account for this alpha.
 
 Application support is bounded to the declared static web build integrations. Dynamic routes and multi-step interactions can remain unresolved. A successful build is not a claim that all guidance was checked, and Surfaces does not claim that an external coding tool consumed its instructions. Findings remain available for review.
-
-During the last moments of first-run verification, Connect application may briefly report that the prepared runtime capabilities are unavailable. If that message remains after the local destination shows Ready, close the connection panel and reopen Connect application. This recovered during verification of the downloaded alpha.
 
 This is an early alpha for trying the local workflow. It does not include automatic updates.
