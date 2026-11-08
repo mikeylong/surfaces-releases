@@ -26,4 +26,6 @@ This release supports fresh installations. Recovery or migration of failed works
 
 Application support is bounded to the declared static web build integrations. Dynamic routes and multi-step interactions can remain unresolved. A successful build is not a claim that all guidance was checked, and Surfaces does not claim that an external coding tool consumed its instructions. Findings remain available for review.
 
+During the last moments of first-run verification, Connect application may briefly report that the prepared runtime capabilities are unavailable. If that message remains after the local destination shows Ready, close the connection panel and reopen Connect application. This recovered during verification of the downloaded alpha.
+
 This is an early alpha for trying the local workflow. It does not include automatic updates.
