@@ -1,3 +1,90 @@
+# Surfaces 0.1.0-alpha.5
+
+Alpha 5 processes commits automatically while Surfaces is open: build locally,
+check accepted guidance, apply supported corrections, rebuild and recheck, then
+deploy locally. Routine runs do not require **Build**, **Deploy**, or another
+approval of the same guidance. New or contested requirements still need your
+decision.
+
+Corrections use a private source version. Your original repository, commits and
+unsaved or untracked work stay unchanged. Existing workspaces retain their source,
+accepted guidance, builds, deployments, feedback and history. The canvas and owner
+controls are unchanged; manual build and Deploy remain available.
+
+## Work with automatic changes
+
+For a supported application with its source, local destination and correction
+scope authorized, commit changes in the **original connected Git repository**.
+Keep Surfaces open while it processes the commit and serves the local deployment.
+When the destination shows the completed build running, **Open local deployment**
+opens the application on this Mac.
+
+Saving files alone does not trigger this path. Changes saved only in Surfaces'
+managed working folder remain part of the optional manual workflow. Corrections
+are not copied back to the original repository, so later commits may need the
+same accepted correction again.
+
+After a restart, Surfaces checks the latest committed tip rather than replaying
+every intermediate commit. The tip must descend from the last recorded automatic
+revision; rewritten or unrelated history needs reconciliation. The watcher follows
+the repository's HEAD, not a selected branch name or remote webhook.
+
+## Updating an existing workspace
+
+The signed app reused the existing Portfolio workspace's accepted guidance and
+completed build, then deployed it locally without another build, Deploy click or
+guidance approval. Original and managed source, accepted guidance and historical
+records were preserved.
+
+Eligible connections without accepted guidance or unfinished work can prepare an
+updated environment alongside the retained one. Connections with accepted guidance
+keep their environment. Earlier builds and captures retain their original evidence.
+Verified stopped local-serving history is preserved during shutdown.
+
+Build and local-serving preparation coordinate access to their environment.
+Interrupted preparation can continue only after Surfaces verifies that execution
+never started, saved inputs remain unchanged and the original deadline applies.
+Automatic deployment waits for the saved destination to become ready. An exact
+completed build interrupted before deployment begins can continue without
+rebuilding or repeated guidance approval. Unknown outcomes remain retained for
+reconciliation.
+
+## Install
+
+Download `Surfaces-0.1.0-alpha.5-macOS-arm64.zip` and `SHA256SUMS` from the same
+release. The package is signed and notarized. Extract the ZIP, move Surfaces to
+Applications and open it.
+
+You need an Apple silicon Mac running macOS 13 or later, at least 16 GiB of memory,
+more than 20 GiB of free disk space for new environment preparation, and internet
+access for preparation and dependencies. Keep additional room for retained builds
+and local serving. Host Node, Python and Lima installations are not required.
+
+## Alpha limits
+
+- Imported contracts are checked, and build inspection shows their version and
+  results. The general **Guidance** panel can still appear empty for imported
+  guidance; use the build's inspection to see those results.
+- Next.js support covers one application with an npm or pnpm lockfile pinning
+  stable Next 16, the declared `next build` script, default `.next` output and
+  supported declarative configuration. It runs with `next start`, without static
+  conversion. Custom plugins/build commands/output modes, multi-package workspaces,
+  and nonempty base paths or asset prefixes remain unsupported.
+- Local serving accepts GET and HEAD. Server actions, write endpoints,
+  authentication or secret-dependent journeys, external runtime services and
+  outbound application networking remain unsupported. Installation uses the
+  lockfile with scripts disabled; supported font downloads are allowed at build time.
+- Checks cover declared selectors, rendered properties, literal DOM attributes
+  and supported interaction recipes. Missing or unsupported checks remain visible
+  and do not establish compliance. A failed correction or unresolved checks after
+  correction retain an exception and preserve the previous publication. Optional
+  manual **Deploy** remains available
+  for a valid artifact with findings visible and normal destination/recovery checks.
+- Corrections require accepted source-bound mappings and allow one pass per run.
+  This is not arbitrary code repair or complete visual/accessibility checking.
+- Keep Surfaces open to process commits and serve deployments. This alpha adds no
+  public hosting, independent background service, remote commit service or app updater.
+
 # Surfaces 0.1.0-alpha.4
 
 Alpha 4 adds support for Next.js 16 applications with npm or pnpm, including
