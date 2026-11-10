@@ -1,3 +1,24 @@
+# Surfaces 0.1.0-alpha.6
+
+Alpha 6 automatically cleans up the private VMs used for Next.js previews,
+observations and local deployments after their work ends. Repeated serving
+sessions no longer leave a stopped private VM base behind.
+
+When Surfaces starts or stops serving an application, it also cleans up eligible
+stopped copies from its verified earlier environments. Active services and shared build
+environments stay intact. Unverified or unknown state is preserved for recovery.
+
+Your application source, accepted guidance, builds, notes and history are
+preserved. The interface and automatic commit-to-local-deployment workflow stay
+the same.
+
+Download `Surfaces-0.1.0-alpha.6-macOS-arm64.zip` and `SHA256SUMS` from the same
+release. Extract the ZIP, replace Surfaces in Applications and reopen your
+existing workspace. Existing supported runtime resources are reused.
+
+The application, checking and local-serving limits described in Alpha 5 below
+still apply. This update adds no system-wide VM pruner or automatic app updater.
+
 # Surfaces 0.1.0-alpha.5
 
 Alpha 5 processes commits automatically while Surfaces is open: build locally,

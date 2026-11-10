@@ -3,7 +3,11 @@
 Surfaces builds applications locally, checks reusable design guidance, and serves
 completed builds on your Mac.
 
-Alpha 5 processes authorized original-repository commits while Surfaces is open:
+Alpha 6 cleans up the private VMs used for previews and local serving after their
+work ends, preventing stopped copies from accumulating. Existing sources,
+guidance, builds and history stay intact.
+
+Surfaces processes authorized original-repository commits while it is open:
 build, check accepted guidance, apply supported corrections, recheck and deploy
 locally. Your original source stays unchanged. Routine runs need no Build or Deploy
 clicks and no repeated approval of the same guidance.
